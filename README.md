@@ -1,3 +1,5 @@
+<div align="center">
+
 # SLM-cot-Eval
 
 **Reproducibility artifact for the TMLR manuscript: "Quantization and cue-conditioned reasoning"**
@@ -7,6 +9,8 @@
 [![Pandas](https://img.shields.io/badge/Pandas-2.3.3-150458?style=flat-square&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 [![GitHub](https://img.shields.io/badge/GitHub-SLM--cot--Eval-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/danishnaseer00/SLM-cot-Eval)
 [![Stars](https://img.shields.io/github/stars/danishnaseer00/SLM-cot-Eval?style=flat-square&logo=github&logoColor=white)](https://github.com/danishnaseer00/SLM-cot-Eval/stargazers)
+
+</div>
 
 This repository accompanies the TMLR manuscript in `main.tex`. It contains the frozen 145-question trial set, 15 completed generation files, 3,078 automated judgments, two 360-row human annotation files, and the analysis code used for the reported tables and figures.
 
