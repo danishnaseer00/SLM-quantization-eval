@@ -12,7 +12,7 @@
 
 </div>
 
-This repository accompanies the TMLR manuscript in `main.tex`. It contains the frozen 145-question trial set, 15 completed generation files, 3,078 automated judgments, two 360-row human annotation files, and the analysis code used for the reported tables and figures.
+This repository is the reproducibility artifact for the TMLR manuscript on quantization and cue-conditioned reasoning. It contains the frozen 145-question trial set, 15 completed generation files, 3,078 automated judgments, two 360-row human annotation files, and the analysis code used for the reported tables and figures.
 
 ---
 
@@ -36,7 +36,7 @@ This repository accompanies the TMLR manuscript in `main.tex`. It contains the f
 We study how **quantization** interacts with **cue-conditioned reasoning** in small language models (SLMs). The artifact includes:
 
 - A frozen **145-question trial set** across multiple reasoning benchmarks.
-- **15 generation files** covering 5 models (Llama-3.2, Qwen2.5, Gemma-2) Æ �3 precisions (q4bit, q8bit, qbf16).
+- **15 generation files** covering 5 model configurations (Llama-3.2-1B, Llama-3.2-3B, Qwen2.5-1.5B, Qwen2.5-7B, Gemma-2-2b) × 3 precisions (q4bit, q8bit, qbf16).
 - **3,078 automated rubric-based judgments** (DeepSeek OpenAI-compatible endpoint).
 - **Two 360-row human annotation files** for agreement validation.
 - A complete **re-analysis pipeline** that regenerates every table, figure, and audit in the paper.
@@ -46,20 +46,23 @@ We study how **quantization** interacts with **cue-conditioned reasoning** in sm
 ## Repository Structure
 
 ```
-. ✔── data/
-│   ├── raw/                  # Frozen trials.json + 15 model generation files
-│   ├── processed/            # judge_results.json (frozen judgment artifact)
+.
+├── data/
+│   ├── raw/                  # trials.json + 15 model generation files
+│   ├── processed/            # judge_results.json, judge_summary.json (frozen judgment artifacts)
 │   └── human/                # human_annotator1.csv, human_annotator2.csv
 ├── analysis/
 │   ├── reanalyze.py          # Main re-analysis: fingerprints, audits, figures
 │   ├── analyze_human_annotations.py
-│   └── adjudicate_humans.py
-├── figures/                  # Regenerated .tikz figure sources (Fig 1–4)
+│   ├── adjudicate_humans.py
+│   └── outputs/              # Regenerated audit tables and summaries
+├── figures/                  # Regenerated figure sources (.tikz) and previews (.pdf)
 ├── faithfulness_judge.py     # Rubric-based faithfulness judge (DeepSeek API)
 ├── run_experiments.py        # Modal entry point for GPU generation jobs
 ├── requirements-analysis.txt # Pinned analysis environment
 ├── requirements-judge.txt    # Judge client requirements
-├── ARTIFACT_MASNIFEST.sha256  # SHA-256 integrity manifest (frozen)
+├── data.zip                  # Zipped archive of the data/ directory
+├── ARTIFACT_MANIFEST.sha256  # SHA-256 integrity manifest (frozen)
 ├── REPRODUCIBILITY.md        # Detailed verification instructions
 └── README.md
 ```
@@ -135,6 +138,10 @@ Key audit outputs produced by the pipeline:
 | `analysis/outputs/reanalysis_summary.json` | Machine-readable analysis summary |
 | `analysis/outputs/human_annotation_summary.json` | Human-label validation and agreement summary |
 
+## Contributing
+
+Bug reports, issue triage, and reproducibility notes are welcome. Please open an issue before proposing changes to the frozen data, the analysis pipeline, or the integrity manifest.
+
 ## Citation
 
 If you use this artifact in your research, please cite the accompanying manuscript:
@@ -146,10 +153,6 @@ If you use this artifact in your research, please cite the accompanying manuscri
   year    = {2026}
 }
 ```
-
-## Contributing
-
-Bug reports, issue triage, and reproducibility notes are welcome. Please open an issue before proposing changes to the frozen data, the analysis pipeline, or the integrity manifest.
 
 ## License
 
