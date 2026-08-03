@@ -25,6 +25,7 @@ This repository accompanies the TMLR manuscript in `main.tex`. It contains the f
 - [Run New Generations](#run-new-generations)
 - [Automated Judging](#automated-judging)
 - [Data Integrity & Audits](#data-integrity--audits)
+- [Contributing](#contributing)
 - [Citation](#citation)
 - [License](#license)
 
@@ -35,7 +36,7 @@ This repository accompanies the TMLR manuscript in `main.tex`. It contains the f
 We study how **quantization** interacts with **cue-conditioned reasoning** in small language models (SLMs). The artifact includes:
 
 - A frozen **145-question trial set** across multiple reasoning benchmarks.
-- **15 generation files** covering 5 models (Llama-3.2, Qwen2.5, Gemma-2) × 3 precisions (q4bit, q8bit, qbf16).
+- **15 generation files** covering 5 models (Llama-3.2, Qwen2.5, Gemma-2) Æ �3 precisions (q4bit, q8bit, qbf16).
 - **3,078 automated rubric-based judgments** (DeepSeek OpenAI-compatible endpoint).
 - **Two 360-row human annotation files** for agreement validation.
 - A complete **re-analysis pipeline** that regenerates every table, figure, and audit in the paper.
@@ -45,8 +46,7 @@ We study how **quantization** interacts with **cue-conditioned reasoning** in sm
 ## Repository Structure
 
 ```
-.
-├── data/
+. ✔── data/
 │   ├── raw/                  # Frozen trials.json + 15 model generation files
 │   ├── processed/            # judge_results.json (frozen judgment artifact)
 │   └── human/                # human_annotator1.csv, human_annotator2.csv
@@ -59,7 +59,7 @@ We study how **quantization** interacts with **cue-conditioned reasoning** in sm
 ├── run_experiments.py        # Modal entry point for GPU generation jobs
 ├── requirements-analysis.txt # Pinned analysis environment
 ├── requirements-judge.txt    # Judge client requirements
-├── ARTIFACT_MANIFEST.sha256  # SHA-256 integrity manifest (frozen)
+├── ARTIFACT_MASNIFEST.sha256  # SHA-256 integrity manifest (frozen)
 ├── REPRODUCIBILITY.md        # Detailed verification instructions
 └── README.md
 ```
@@ -146,6 +146,10 @@ If you use this artifact in your research, please cite the accompanying manuscri
   year    = {2026}
 }
 ```
+
+## Contributing
+
+Bug reports, issue triage, and reproducibility notes are welcome. Please open an issue before proposing changes to the frozen data, the analysis pipeline, or the integrity manifest.
 
 ## License
 
