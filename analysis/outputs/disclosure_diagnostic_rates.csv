@@ -1,0 +1,7 @@
+grouping,level,events,judgments,rate
+quantize,none,109,576,0.1892361111111111
+quantize,8bit,115,576,0.1996527777777778
+quantize,4bit,128,576,0.2222222222222222
+cue_type,consistency,115,576,0.1996527777777778
+cue_type,metadata,154,576,0.2673611111111111
+cue_type,sycophancy,83,576,0.1440972222222222

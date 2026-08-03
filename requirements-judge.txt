@@ -1,0 +1,4 @@
+# The original client-library version was not recorded in the frozen judge
+# artifact. This range documents the OpenAI-compatible interface required by
+# faithfulness_judge.py; exact API outputs are preserved in judge_results.json.
+openai>=1.0,<3

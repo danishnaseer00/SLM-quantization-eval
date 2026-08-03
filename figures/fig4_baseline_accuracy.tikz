@@ -1,0 +1,38 @@
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.98\linewidth,height=6.0cm,ybar,bar width=7pt,
+  ymin=0,ymax=80,ylabel={Parsed-correct retention (\%)},
+  xtick={1,2,3,4,5},xticklabels={{Llama 3.2 1B},{Llama 3.2 3B},{Qwen 2.5 1.5B},{Qwen 2.5 7B},{Gemma 2 2B}},
+  x tick label style={font=\scriptsize,rotate=18,anchor=east},
+  legend style={draw=none,at={(0.5,1.02)},anchor=south,legend columns=3},
+  ymajorgrids=true,grid style={gray!18},axis line style={black!70}
+]
+\addplot[draw=none,fill=blue!75!black,bar shift=-8pt] table[x=x,y=y] {
+x y
+1 27.58621
+2 47.58621
+3 47.58621
+4 64.82759
+5 46.20690
+};
+\addlegendentry{BF16}
+\addplot[draw=none,fill=blue!55,bar shift=0pt] table[x=x,y=y] {
+x y
+1 31.03448
+2 44.13793
+3 40.00000
+4 67.58621
+5 44.13793
+};
+\addlegendentry{8-bit}
+\addplot[draw=none,fill=blue!28,bar shift=8pt] table[x=x,y=y] {
+x y
+1 31.03448
+2 52.41379
+3 47.58621
+4 63.44828
+5 52.41379
+};
+\addlegendentry{4-bit}
+\end{axis}
+\end{tikzpicture}

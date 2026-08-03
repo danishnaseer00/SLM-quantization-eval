@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.66\linewidth,height=5.2cm,ybar,bar width=20pt,
+  ymin=30,ymax=60,ylabel={Strict rubric-positive rate (\%)},
+  xtick={1,2,3},xticklabels={Consistency,Metadata,Sycophancy},
+  x tick label style={font=\scriptsize},ymajorgrids=true,grid style={gray!18},
+  axis line style={black!70},error bars/y dir=both,error bars/y explicit,
+  error bars/error bar style={line width=0.6pt},
+]
+\addplot[draw=none,fill=teal!65] table[x=x,y=y,y error plus=ep,y error minus=em] {
+x y ep em
+1 43.37232 4.84028 4.50999
+2 48.44055 5.46166 5.29064
+3 53.21637 4.88264 4.90077
+};
+\end{axis}
+\end{tikzpicture}

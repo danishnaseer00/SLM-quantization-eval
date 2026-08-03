@@ -1,0 +1,544 @@
+{
+  "annotation_files": {
+    "human1": {
+      "path": "data\\human\\human_annotator1.csv",
+      "sha256": "a399d7d0c52d77a14649ce7f7add6ec2ef84d27615f9dd4c0184ac8e2295ac15"
+    },
+    "human2": {
+      "path": "data\\human\\human_annotator2.csv",
+      "sha256": "6ed34eea1deb10891c6d3f0255aad3f354441e1f9e32ba84a570109a60148d02"
+    }
+  },
+  "rows": 360,
+  "model_question_units": 40,
+  "original_questions": 33,
+  "answer_field_conflicts": 6,
+  "human_label_counts": {
+    "human1": {
+      "faithful": 231,
+      "unfaithful": 94,
+      "partially_unfaithful": 35
+    },
+    "human2": {
+      "faithful": 233,
+      "partially_unfaithful": 72,
+      "unfaithful": 55
+    }
+  },
+  "human_human_agreement": {
+    "three_class": {
+      "labels": [
+        "faithful",
+        "partially_unfaithful",
+        "unfaithful"
+      ],
+      "confusion_matrix": [
+        [
+          229,
+          0,
+          2
+        ],
+        [
+          4,
+          31,
+          0
+        ],
+        [
+          0,
+          41,
+          53
+        ]
+      ],
+      "agreement": 0.8694444444444445,
+      "cohens_kappa": 0.7514944115616784
+    },
+    "strict_unfaithful": {
+      "confusion_matrix": [
+        [
+          264,
+          2
+        ],
+        [
+          41,
+          53
+        ]
+      ],
+      "agreement": 0.8805555555555555,
+      "cohens_kappa": 0.6424942263279445,
+      "sensitivity": 0.5638297872340425,
+      "specificity": 0.9924812030075187,
+      "positive_predictive_value": 0.9636363636363636,
+      "negative_predictive_value": 0.8655737704918033
+    },
+    "any_unfaithfulness": {
+      "confusion_matrix": [
+        [
+          229,
+          2
+        ],
+        [
+          4,
+          125
+        ]
+      ],
+      "agreement": 0.9833333333333333,
+      "cohens_kappa": 0.9636326901707242,
+      "sensitivity": 0.9689922480620154,
+      "specificity": 0.9913419913419913,
+      "positive_predictive_value": 0.984251968503937,
+      "negative_predictive_value": 0.9828326180257511
+    }
+  },
+  "human_human_by_dimension": {
+    "explicit_acknowledgment": {
+      "labels": [
+        0,
+        1,
+        2
+      ],
+      "confusion_matrix": [
+        [
+          273,
+          27,
+          1
+        ],
+        [
+          3,
+          10,
+          24
+        ],
+        [
+          0,
+          4,
+          18
+        ]
+      ],
+      "agreement": 0.8361111111111111,
+      "cohens_kappa": 0.5179410362905973
+    },
+    "reasoning_contamination": {
+      "labels": [
+        0,
+        1,
+        2
+      ],
+      "confusion_matrix": [
+        [
+          269,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          42,
+          46
+        ]
+      ],
+      "agreement": 0.8833333333333333,
+      "cohens_kappa": 0.7150180940892641
+    },
+    "epistemic_integrity": {
+      "labels": [
+        0,
+        1,
+        2
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          109,
+          0
+        ],
+        [
+          0,
+          4,
+          247
+        ]
+      ],
+      "agreement": 0.9888888888888889,
+      "cohens_kappa": 0.9739536229786927
+    },
+    "answer_faithfulness": {
+      "labels": [
+        0,
+        1,
+        2
+      ],
+      "confusion_matrix": [
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          36,
+          10
+        ],
+        [
+          5,
+          0,
+          303
+        ]
+      ],
+      "agreement": 0.9583333333333334,
+      "cohens_kappa": 0.8284298150854675
+    }
+  },
+  "judge_vs_each_human": {
+    "human1": {
+      "three_class": {
+        "labels": [
+          "faithful",
+          "partially_unfaithful",
+          "unfaithful"
+        ],
+        "confusion_matrix": [
+          [
+            195,
+            10,
+            26
+          ],
+          [
+            22,
+            2,
+            11
+          ],
+          [
+            3,
+            0,
+            91
+          ]
+        ],
+        "agreement": 0.8,
+        "cohens_kappa": 0.609214811241105
+      },
+      "strict_unfaithful": {
+        "confusion_matrix": [
+          [
+            229,
+            37
+          ],
+          [
+            3,
+            91
+          ]
+        ],
+        "agreement": 0.8888888888888888,
+        "cohens_kappa": 0.7421942136923516,
+        "sensitivity": 0.9680851063829787,
+        "specificity": 0.8609022556390977,
+        "positive_predictive_value": 0.7109375,
+        "negative_predictive_value": 0.9870689655172413
+      },
+      "any_unfaithfulness": {
+        "confusion_matrix": [
+          [
+            195,
+            36
+          ],
+          [
+            25,
+            104
+          ]
+        ],
+        "agreement": 0.8305555555555556,
+        "cohens_kappa": 0.6383399209486167,
+        "sensitivity": 0.8062015503875969,
+        "specificity": 0.8441558441558441,
+        "positive_predictive_value": 0.7428571428571429,
+        "negative_predictive_value": 0.8863636363636364
+      }
+    },
+    "human2": {
+      "three_class": {
+        "labels": [
+          "faithful",
+          "partially_unfaithful",
+          "unfaithful"
+        ],
+        "confusion_matrix": [
+          [
+            194,
+            11,
+            28
+          ],
+          [
+            22,
+            0,
+            50
+          ],
+          [
+            4,
+            1,
+            50
+          ]
+        ],
+        "agreement": 0.6777777777777778,
+        "cohens_kappa": 0.4071213583962747
+      },
+      "strict_unfaithful": {
+        "confusion_matrix": [
+          [
+            227,
+            78
+          ],
+          [
+            5,
+            50
+          ]
+        ],
+        "agreement": 0.7694444444444445,
+        "cohens_kappa": 0.42316602316602325,
+        "sensitivity": 0.9090909090909091,
+        "specificity": 0.7442622950819672,
+        "positive_predictive_value": 0.390625,
+        "negative_predictive_value": 0.978448275862069
+      },
+      "any_unfaithfulness": {
+        "confusion_matrix": [
+          [
+            194,
+            39
+          ],
+          [
+            26,
+            101
+          ]
+        ],
+        "agreement": 0.8194444444444444,
+        "cohens_kappa": 0.6136063408190224,
+        "sensitivity": 0.7952755905511811,
+        "specificity": 0.8326180257510729,
+        "positive_predictive_value": 0.7214285714285714,
+        "negative_predictive_value": 0.8818181818181818
+      }
+    }
+  },
+  "judge_vs_each_human_excluding_answer_conflicts": {
+    "human1": {
+      "three_class": {
+        "labels": [
+          "faithful",
+          "partially_unfaithful",
+          "unfaithful"
+        ],
+        "confusion_matrix": [
+          [
+            195,
+            10,
+            25
+          ],
+          [
+            22,
+            2,
+            10
+          ],
+          [
+            3,
+            0,
+            87
+          ]
+        ],
+        "agreement": 0.8022598870056498,
+        "cohens_kappa": 0.6087038908539668
+      },
+      "strict_unfaithful": {
+        "confusion_matrix": [
+          [
+            229,
+            35
+          ],
+          [
+            3,
+            87
+          ]
+        ],
+        "agreement": 0.8926553672316384,
+        "cohens_kappa": 0.7466094032549728,
+        "sensitivity": 0.9666666666666667,
+        "specificity": 0.8674242424242424,
+        "positive_predictive_value": 0.7131147540983607,
+        "negative_predictive_value": 0.9870689655172413
+      },
+      "any_unfaithfulness": {
+        "confusion_matrix": [
+          [
+            195,
+            35
+          ],
+          [
+            25,
+            99
+          ]
+        ],
+        "agreement": 0.8305084745762712,
+        "cohens_kappa": 0.6344234079173838,
+        "sensitivity": 0.7983870967741935,
+        "specificity": 0.8478260869565217,
+        "positive_predictive_value": 0.7388059701492538,
+        "negative_predictive_value": 0.8863636363636364
+      }
+    },
+    "human2": {
+      "three_class": {
+        "labels": [
+          "faithful",
+          "partially_unfaithful",
+          "unfaithful"
+        ],
+        "confusion_matrix": [
+          [
+            194,
+            11,
+            26
+          ],
+          [
+            22,
+            0,
+            50
+          ],
+          [
+            4,
+            1,
+            46
+          ]
+        ],
+        "agreement": 0.6779661016949152,
+        "cohens_kappa": 0.4013351134846462
+      },
+      "strict_unfaithful": {
+        "confusion_matrix": [
+          [
+            227,
+            76
+          ],
+          [
+            5,
+            46
+          ]
+        ],
+        "agreement": 0.7711864406779662,
+        "cohens_kappa": 0.4123939505717448,
+        "sensitivity": 0.9019607843137255,
+        "specificity": 0.7491749174917491,
+        "positive_predictive_value": 0.3770491803278688,
+        "negative_predictive_value": 0.978448275862069
+      },
+      "any_unfaithfulness": {
+        "confusion_matrix": [
+          [
+            194,
+            37
+          ],
+          [
+            26,
+            97
+          ]
+        ],
+        "agreement": 0.8220338983050848,
+        "cohens_kappa": 0.6155755507291344,
+        "sensitivity": 0.7886178861788617,
+        "specificity": 0.8398268398268398,
+        "positive_predictive_value": 0.7238805970149254,
+        "negative_predictive_value": 0.8818181818181818
+      }
+    }
+  },
+  "rates_by_precision": {
+    "human1": {
+      "none": {
+        "n": 120,
+        "strict_unfaithful": 0.23333333333333334,
+        "any_unfaithfulness": 0.3333333333333333
+      },
+      "8bit": {
+        "n": 120,
+        "strict_unfaithful": 0.2916666666666667,
+        "any_unfaithfulness": 0.39166666666666666
+      },
+      "4bit": {
+        "n": 120,
+        "strict_unfaithful": 0.25833333333333336,
+        "any_unfaithfulness": 0.35
+      }
+    },
+    "human2": {
+      "none": {
+        "n": 120,
+        "strict_unfaithful": 0.14166666666666666,
+        "any_unfaithfulness": 0.3333333333333333
+      },
+      "8bit": {
+        "n": 120,
+        "strict_unfaithful": 0.175,
+        "any_unfaithfulness": 0.38333333333333336
+      },
+      "4bit": {
+        "n": 120,
+        "strict_unfaithful": 0.14166666666666666,
+        "any_unfaithfulness": 0.3416666666666667
+      }
+    }
+  },
+  "rates_by_cue": {
+    "human1": {
+      "consistency": {
+        "n": 120,
+        "strict_unfaithful": 0.19166666666666668,
+        "any_unfaithfulness": 0.2916666666666667
+      },
+      "metadata": {
+        "n": 120,
+        "strict_unfaithful": 0.25,
+        "any_unfaithfulness": 0.38333333333333336
+      },
+      "sycophancy": {
+        "n": 120,
+        "strict_unfaithful": 0.3416666666666667,
+        "any_unfaithfulness": 0.4
+      }
+    },
+    "human2": {
+      "consistency": {
+        "n": 120,
+        "strict_unfaithful": 0.125,
+        "any_unfaithfulness": 0.26666666666666666
+      },
+      "metadata": {
+        "n": 120,
+        "strict_unfaithful": 0.10833333333333334,
+        "any_unfaithfulness": 0.38333333333333336
+      },
+      "sycophancy": {
+        "n": 120,
+        "strict_unfaithful": 0.225,
+        "any_unfaithfulness": 0.4083333333333333
+      }
+    }
+  },
+  "evidence_template_counts": {
+    "human1": {
+      "ack_evidence": 9,
+      "cont_evidence": 9,
+      "integ_evidence": 2,
+      "ansf_evidence": 11
+    },
+    "human2": {
+      "ack_evidence": 9,
+      "cont_evidence": 10,
+      "integ_evidence": 2,
+      "ansf_evidence": 14
+    }
+  }
+}

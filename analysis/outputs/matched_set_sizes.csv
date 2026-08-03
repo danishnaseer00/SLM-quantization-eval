@@ -1,0 +1,6 @@
+model,common_prefix,correct_at_all_precisions,quality_controlled_questions,judgments
+Qwen 2.5 1.5B,145,28,28,252
+Qwen 2.5 7B,145,71,71,639
+Gemma 2 2B,145,39,39,351
+Llama 3.2 1B,145,15,15,135
+Llama 3.2 3B,145,39,39,351

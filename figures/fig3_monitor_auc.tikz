@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.82\linewidth,height=5.2cm,xbar,bar width=11pt,
+  xmin=0.5,xmax=1.0,xlabel={Question-grouped cross-validated AUC},
+  ytick={1,2,3,4},yticklabels={{Answer flip},{Response length},{Flip + length},{All features}},
+  y tick label style={font=\scriptsize},xmajorgrids=true,grid style={gray!18},
+  axis line style={black!70},error bars/x dir=both,error bars/x explicit,
+  error bars/error bar style={line width=0.6pt},
+]
+\addplot[draw=none,fill=blue!55] table[y=y,x=x,x error plus=ep,x error minus=em] {
+y x ep em
+1 0.940318 0.018954 0.023758
+2 0.584469 0.045451 0.049812
+3 0.955405 0.014280 0.018252
+4 0.963005 0.011635 0.016791
+};
+\end{axis}
+\end{tikzpicture}

@@ -1,0 +1,173 @@
+{
+  "generated": "2026-07-24T08:26:35.262831+00:00",
+  "num_judgments": 3078,
+  "by_config": {
+    "gemma-2-2b-it @ 4bit": {
+      "n": 228,
+      "faithful": 75,
+      "partial": 4,
+      "unfaithful": 149,
+      "explicit_acknowledgment_score": 116,
+      "reasoning_contamination_score": 269,
+      "epistemic_integrity_score": 164,
+      "answer_faithfulness_score": 158
+    },
+    "gemma-2-2b-it @ 8bit": {
+      "n": 192,
+      "faithful": 76,
+      "partial": 2,
+      "unfaithful": 114,
+      "explicit_acknowledgment_score": 105,
+      "reasoning_contamination_score": 203,
+      "epistemic_integrity_score": 172,
+      "answer_faithfulness_score": 159
+    },
+    "gemma-2-2b-it @ none": {
+      "n": 201,
+      "faithful": 79,
+      "partial": 3,
+      "unfaithful": 119,
+      "explicit_acknowledgment_score": 113,
+      "reasoning_contamination_score": 205,
+      "epistemic_integrity_score": 182,
+      "answer_faithfulness_score": 165
+    },
+    "Llama-3.2-1B-Instruct @ 4bit": {
+      "n": 135,
+      "faithful": 49,
+      "partial": 2,
+      "unfaithful": 84,
+      "explicit_acknowledgment_score": 10,
+      "reasoning_contamination_score": 149,
+      "epistemic_integrity_score": 89,
+      "answer_faithfulness_score": 102
+    },
+    "Llama-3.2-1B-Instruct @ 8bit": {
+      "n": 135,
+      "faithful": 49,
+      "partial": 1,
+      "unfaithful": 85,
+      "explicit_acknowledgment_score": 17,
+      "reasoning_contamination_score": 157,
+      "epistemic_integrity_score": 93,
+      "answer_faithfulness_score": 102
+    },
+    "Llama-3.2-1B-Instruct @ none": {
+      "n": 120,
+      "faithful": 49,
+      "partial": 4,
+      "unfaithful": 67,
+      "explicit_acknowledgment_score": 11,
+      "reasoning_contamination_score": 119,
+      "epistemic_integrity_score": 100,
+      "answer_faithfulness_score": 112
+    },
+    "Llama-3.2-3B-Instruct @ 4bit": {
+      "n": 228,
+      "faithful": 129,
+      "partial": 5,
+      "unfaithful": 94,
+      "explicit_acknowledgment_score": 51,
+      "reasoning_contamination_score": 157,
+      "epistemic_integrity_score": 274,
+      "answer_faithfulness_score": 270
+    },
+    "Llama-3.2-3B-Instruct @ 8bit": {
+      "n": 192,
+      "faithful": 98,
+      "partial": 6,
+      "unfaithful": 88,
+      "explicit_acknowledgment_score": 65,
+      "reasoning_contamination_score": 162,
+      "epistemic_integrity_score": 207,
+      "answer_faithfulness_score": 211
+    },
+    "Llama-3.2-3B-Instruct @ none": {
+      "n": 207,
+      "faithful": 118,
+      "partial": 4,
+      "unfaithful": 85,
+      "explicit_acknowledgment_score": 86,
+      "reasoning_contamination_score": 146,
+      "epistemic_integrity_score": 248,
+      "answer_faithfulness_score": 244
+    },
+    "Qwen2.5-1.5B-Instruct @ 4bit": {
+      "n": 207,
+      "faithful": 115,
+      "partial": 1,
+      "unfaithful": 91,
+      "explicit_acknowledgment_score": 10,
+      "reasoning_contamination_score": 177,
+      "epistemic_integrity_score": 218,
+      "answer_faithfulness_score": 234
+    },
+    "Qwen2.5-1.5B-Instruct @ 8bit": {
+      "n": 174,
+      "faithful": 95,
+      "partial": 1,
+      "unfaithful": 78,
+      "explicit_acknowledgment_score": 22,
+      "reasoning_contamination_score": 145,
+      "epistemic_integrity_score": 184,
+      "answer_faithfulness_score": 195
+    },
+    "Qwen2.5-1.5B-Instruct @ none": {
+      "n": 207,
+      "faithful": 107,
+      "partial": 2,
+      "unfaithful": 98,
+      "explicit_acknowledgment_score": 33,
+      "reasoning_contamination_score": 175,
+      "epistemic_integrity_score": 225,
+      "answer_faithfulness_score": 218
+    },
+    "Qwen2.5-7B-Instruct @ 4bit": {
+      "n": 276,
+      "faithful": 163,
+      "partial": 7,
+      "unfaithful": 106,
+      "explicit_acknowledgment_score": 135,
+      "reasoning_contamination_score": 179,
+      "epistemic_integrity_score": 350,
+      "answer_faithfulness_score": 338
+    },
+    "Qwen2.5-7B-Instruct @ 8bit": {
+      "n": 294,
+      "faithful": 164,
+      "partial": 3,
+      "unfaithful": 127,
+      "explicit_acknowledgment_score": 156,
+      "reasoning_contamination_score": 197,
+      "epistemic_integrity_score": 383,
+      "answer_faithfulness_score": 334
+    },
+    "Qwen2.5-7B-Instruct @ none": {
+      "n": 282,
+      "faithful": 173,
+      "partial": 6,
+      "unfaithful": 103,
+      "explicit_acknowledgment_score": 131,
+      "reasoning_contamination_score": 170,
+      "epistemic_integrity_score": 393,
+      "answer_faithfulness_score": 357
+    }
+  },
+  "by_cue_type": {
+    "sycophancy": {
+      "n": 1026,
+      "faithful": 459,
+      "unfaithful": 546
+    },
+    "consistency": {
+      "n": 1026,
+      "faithful": 566,
+      "unfaithful": 445
+    },
+    "metadata": {
+      "n": 1026,
+      "faithful": 514,
+      "unfaithful": 497
+    }
+  }
+}

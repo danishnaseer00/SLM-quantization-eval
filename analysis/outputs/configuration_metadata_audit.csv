@@ -1,0 +1,16 @@
+file,model,precision,checkpoint,transformers_version,has_model_revision,has_observed_gpu,has_processed_trials,has_trial_set_sha256,has_code_version,has_generation_config,has_quantization_config,missing_field_count,missing_fields
+results_gemma-2-2b-it_q4bit.json,Gemma 2 2B,4-bit,final,4.46.3,False,False,False,False,False,False,False,7,model_revision;observed_gpu;processed_trials;trial_set_sha256;code_version;generation_config;quantization_config
+results_gemma-2-2b-it_q8bit.json,Gemma 2 2B,8-bit,final,4.46.3,True,True,True,True,True,True,True,0,
+results_gemma-2-2b-it_qbf16.json,Gemma 2 2B,BF16,final,4.46.3,False,False,False,False,False,False,False,7,model_revision;observed_gpu;processed_trials;trial_set_sha256;code_version;generation_config;quantization_config
+results_Llama-3_2-1B-Instruct_q4bit.json,Llama 3.2 1B,4-bit,final,4.46.3,False,False,False,False,False,False,False,7,model_revision;observed_gpu;processed_trials;trial_set_sha256;code_version;generation_config;quantization_config
+results_Llama-3_2-1B-Instruct_q8bit.json,Llama 3.2 1B,8-bit,final,4.46.3,True,True,True,True,True,True,True,0,
+results_Llama-3_2-1B-Instruct_qbf16.json,Llama 3.2 1B,BF16,final,4.46.3,False,False,False,False,False,False,False,7,model_revision;observed_gpu;processed_trials;trial_set_sha256;code_version;generation_config;quantization_config
+results_Llama-3_2-3B-Instruct_q4bit.json,Llama 3.2 3B,4-bit,final,4.46.3,False,False,False,False,False,False,False,7,model_revision;observed_gpu;processed_trials;trial_set_sha256;code_version;generation_config;quantization_config
+results_Llama-3_2-3B-Instruct_q8bit.json,Llama 3.2 3B,8-bit,final,4.46.3,False,False,False,False,False,False,False,7,model_revision;observed_gpu;processed_trials;trial_set_sha256;code_version;generation_config;quantization_config
+results_Llama-3_2-3B-Instruct_qbf16.json,Llama 3.2 3B,BF16,final,4.46.3,False,False,False,False,False,False,False,7,model_revision;observed_gpu;processed_trials;trial_set_sha256;code_version;generation_config;quantization_config
+results_Qwen2_5-1_5B-Instruct_q4bit.json,Qwen 2.5 1.5B,4-bit,final,4.46.3,True,True,True,True,True,True,True,0,
+results_Qwen2_5-1_5B-Instruct_q8bit.json,Qwen 2.5 1.5B,8-bit,final,4.48.3,False,False,False,False,False,False,False,7,model_revision;observed_gpu;processed_trials;trial_set_sha256;code_version;generation_config;quantization_config
+results_Qwen2_5-1_5B-Instruct_qbf16.json,Qwen 2.5 1.5B,BF16,final,4.48.3,True,True,True,True,True,True,True,0,
+results_Qwen2_5-7B-Instruct_q4bit.json,Qwen 2.5 7B,4-bit,final,4.46.3,True,True,True,True,True,True,True,0,
+results_Qwen2_5-7B-Instruct_q8bit.json,Qwen 2.5 7B,8-bit,final,4.48.3,True,True,True,True,True,True,True,0,
+results_Qwen2_5-7B-Instruct_qbf16.json,Qwen 2.5 7B,BF16,final,4.46.3,True,True,True,True,True,True,True,0,
