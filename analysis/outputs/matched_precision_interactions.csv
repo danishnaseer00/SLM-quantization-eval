@@ -1,0 +1,9 @@
+term,odds_ratio,ci_low,ci_high,p_value
+"C(quantize, Treatment(reference=""none""))[T.4bit]:C(model_short)[T.Llama 3.2 1B]",0.7074433311049785,0.31484526832264936,1.589593737238658,0.4020815451366383
+"C(quantize, Treatment(reference=""none""))[T.8bit]:C(model_short)[T.Llama 3.2 1B]",1.0254855334340216,0.5269567704602893,1.9956486722124933,0.9409430810462714
+"C(quantize, Treatment(reference=""none""))[T.4bit]:C(model_short)[T.Llama 3.2 3B]",0.6800706769796899,0.34288803438700655,1.3488255036791674,0.26979365108732123
+"C(quantize, Treatment(reference=""none""))[T.8bit]:C(model_short)[T.Llama 3.2 3B]",0.8277313611111696,0.4958039119095769,1.3818753537626445,0.46964729769895697
+"C(quantize, Treatment(reference=""none""))[T.4bit]:C(model_short)[T.Qwen 2.5 1.5B]",0.5580185059802973,0.3145755229449659,0.9898565854755299,0.04605777507423507
+"C(quantize, Treatment(reference=""none""))[T.8bit]:C(model_short)[T.Qwen 2.5 1.5B]",1.0997590122624088,0.6524505691708865,1.8537341251603856,0.7211134697264698
+"C(quantize, Treatment(reference=""none""))[T.4bit]:C(model_short)[T.Qwen 2.5 7B]",0.8615991058190273,0.5086597344120797,1.4594294946624304,0.5795687234380835
+"C(quantize, Treatment(reference=""none""))[T.8bit]:C(model_short)[T.Qwen 2.5 7B]",1.1128792849251252,0.6681207782919786,1.8537072084206538,0.6811935215829383

@@ -836,6 +836,39 @@ def precision_analysis(
     )
 
 
+def precision_interaction_analysis(matched: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
+    """Exploratory omnibus test of configuration-effect heterogeneity by checkpoint."""
+    gee = smf.gee(
+        'unfaithful ~ C(quantize, Treatment(reference="none")) * C(model_short) + C(cue_type)',
+        groups="trial_index",
+        data=matched,
+        family=sm.families.Binomial(),
+        cov_struct=sm.cov_struct.Exchangeable(),
+    ).fit()
+    terms = [term for term in gee.params.index if ":" in term]
+    estimates = gee.params[terms].to_numpy()
+    covariance = gee.cov_params().loc[terms, terms].to_numpy()
+    statistic = float(estimates @ np.linalg.pinv(covariance) @ estimates)
+    rows = []
+    for term in terms:
+        estimate = float(gee.params[term])
+        standard_error = float(gee.bse[term])
+        rows.append(
+            {
+                "term": term,
+                "odds_ratio": math.exp(estimate),
+                "ci_low": math.exp(estimate - 1.96 * standard_error),
+                "ci_high": math.exp(estimate + 1.96 * standard_error),
+                "p_value": float(gee.pvalues[term]),
+            }
+        )
+    return pd.DataFrame(rows), {
+        "wald_chi2": statistic,
+        "df": int(len(terms)),
+        "p_value": float(chi2.sf(statistic, len(terms))),
+    }
+
+
 def software_consistent_sensitivity(
     matched: pd.DataFrame,
     raw_metadata: list[dict],
@@ -1461,6 +1494,8 @@ def write_artifact_manifest() -> None:
         "paper.bib",
         "tmlr.sty",
         "figures/*.tikz",
+        "LICENSE",
+        "LICENSE-DATA",
     ]
     paths: set[Path] = set()
     for pattern in patterns:
@@ -1484,6 +1519,7 @@ def main() -> None:
     baseline_accuracy = baseline_accuracy_analysis(raw, raw_metadata)
     matched, matched_info = matched_data(raw, qc, raw_metadata)
     precision_rates, overall_precision, precision_tests, matched_gee = precision_analysis(matched)
+    interaction_gee, interaction_summary = precision_interaction_analysis(matched)
     disclosure_rates, disclosure_gee, disclosure_summary = disclosure_diagnostic(matched)
     software_gee, software_summary = software_consistent_sensitivity(matched, raw_metadata)
     cue_tests, cue_summary = cue_analysis(qc)
@@ -1507,6 +1543,7 @@ def main() -> None:
     precision_rates.to_csv(OUT / "matched_precision_rates.csv", index=False)
     precision_tests.to_csv(OUT / "precision_tests.csv", index=False)
     matched_gee.to_csv(OUT / "matched_gee.csv", index=False)
+    interaction_gee.to_csv(OUT / "matched_precision_interactions.csv", index=False)
     disclosure_rates.to_csv(OUT / "disclosure_diagnostic_rates.csv", index=False)
     disclosure_gee.to_csv(OUT / "disclosure_diagnostic_gee.csv", index=False)
     software_gee.to_csv(OUT / "software_consistent_gee.csv", index=False)
@@ -1536,6 +1573,7 @@ def main() -> None:
         "matched_model_question_clusters": int(matched.groupby(["model", "trial_index"]).ngroups),
         "matched_original_question_clusters": int(matched["trial_index"].nunique()),
         "overall_matched_precision": overall_precision,
+        "matched_precision_interaction": interaction_summary,
         "disclosure_diagnostic": disclosure_summary,
         "software_consistent_sensitivity": software_summary,
         "cue_analysis": cue_summary,

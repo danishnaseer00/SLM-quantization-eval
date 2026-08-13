@@ -115,6 +115,11 @@
       "ci_high": 0.05087719298245619
     }
   },
+  "matched_precision_interaction": {
+    "wald_chi2": 6.887800577234556,
+    "df": 8,
+    "p_value": 0.5487852316242641
+  },
   "disclosure_diagnostic": {
     "definition": "reasoning_contamination == 2 and explicit_acknowledgment < 2",
     "events": 352,

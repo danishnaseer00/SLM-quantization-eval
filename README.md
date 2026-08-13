@@ -1,18 +1,16 @@
 <div align="center">
 
-# SLM-cot-Eval
+# Does Quantization Change Small Language Models' Responses to Misleading Context?
 
-**Reproducibility artifact for the TMLR manuscript: "Quantization and cue-conditioned reasoning"**
+**Reproducibility artifact for the NeurIPS 2026 LIGHT Workshop paper: "Does Quantization Change Small Language Models' Responses to Misleading Context?"**
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![NumPy](https://img.shields.io/badge/NumPy-2.4.1-013243?style=flat-square&logo=numpy&logoColor=white)](https://numpy.org/)
 [![Pandas](https://img.shields.io/badge/Pandas-2.3.3-150458?style=flat-square&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
-[![GitHub](https://img.shields.io/badge/GitHub-SLM--cot--Eval-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/danishnaseer00/SLM-cot-Eval)
-[![Stars](https://img.shields.io/github/stars/danishnaseer00/SLM-cot-Eval?style=flat-square&logo=github&logoColor=white)](https://github.com/danishnaseer00/SLM-cot-Eval/stargazers)
 
 </div>
 
-This repository is the reproducibility artifact for the TMLR manuscript on quantization and cue-conditioned reasoning. It contains the frozen 145-question trial set, 15 completed generation files, 3,078 automated judgments, two 360-row human annotation files, and the analysis code used for the reported tables and figures.
+This repository is the reproducibility artifact for the NeurIPS 2026 LIGHT Workshop paper on quantization and responses to misleading context in small language models. It contains the frozen 145-question trial set, 15 completed generation files, 3,078 automated judgments, two 360-row human annotation files, and the analysis code used for the reported tables and figures.
 
 ---
 
@@ -64,17 +62,14 @@ We study how **quantization** interacts with **cue-conditioned reasoning** in sm
 ├── data.zip                  # Zipped archive of the data/ directory
 ├── ARTIFACT_MANIFEST.sha256  # SHA-256 integrity manifest (frozen)
 ├── REPRODUCIBILITY.md        # Detailed verification instructions
+├── LICENSE                   # Code license (MIT)
+├── LICENSE-DATA              # Data license (CC BY 4.0)
 └── README.md
 ```
 
 ## Getting Started
 
-```bash
-git clone https://github.com/danishnaseer00/SLM-cot-Eval.git
-cd SLM-cot-Eval
-```
-
-Create a virtual environment and install the pinned analysis dependencies:
+Download this artifact (or clone the accompanying anonymous repository) and create a virtual environment:
 
 ```bash
 python -m venv .venv
@@ -147,13 +142,13 @@ Bug reports, issue triage, and reproducibility notes are welcome. Please open an
 If you use this artifact in your research, please cite the accompanying manuscript:
 
 ```bibtex
-@article{quantization-cue-conditioned-reasoning,
-  title   = {Quantization and cue-conditioned reasoning},
-  journal = {Transactions on Machine Learning Research},
-  year    = {2026}
+@inproceedings{quantization-misleading-context,
+  title     = {Does Quantization Change Small Language Models' Responses to Misleading Context?},
+  booktitle = {NeurIPS 2026 Workshop on Lightweight AI (LIGHT)},
+  year      = {2026}
 }
 ```
 
 ## License
 
-A license file is pending for this release. The data are intended for research use consistent with the manuscript's peer-review and reproducibility goals.
+The analysis code and scripts are released under the MIT License (see `LICENSE`). The research data are released under the Creative Commons Attribution 4.0 International License (see `LICENSE-DATA`), intended for research use consistent with the manuscript's peer-review and reproducibility goals.
