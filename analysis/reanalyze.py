@@ -1477,13 +1477,23 @@ def make_figures(
 
 
 def write_artifact_manifest() -> None:
-    """Write hashes for frozen inputs, code, and manuscript sources."""
+    """Write hashes for every file shipped in the artifact.
+
+    Coverage is deliberately total: the frozen inputs, every analysis script,
+    every regenerated output table, the rendered figures, and the documentation.
+    A reviewer who reruns the pipeline can therefore diff their regenerated
+    outputs against the shipped ones instead of trusting them.
+
+    ARTIFACT_MANIFEST.sha256 cannot list itself, so it is the sole exclusion.
+    """
     patterns = [
         "data/raw/trials.json",
         "data/raw/results_*.json",
-        "data/processed/judge_results.json",
+        "data/processed/*.json",
         "data/human/human_annotator*.csv",
         "analysis/*.py",
+        "analysis/outputs/*.csv",
+        "analysis/outputs/*.json",
         "faithfulness_judge.py",
         "run_experiments.py",
         "requirements-*.txt",
@@ -1492,8 +1502,14 @@ def write_artifact_manifest() -> None:
         "RESUME_RUNBOOK.md",
         "main.tex",
         "paper.bib",
-        "tmlr.sty",
+        "eacl.tex",
+        "acl.sty",
+        "acl_natbib.bst",
         "figures/*.tikz",
+        "figures/*.pdf",
+        "data.zip",
+        ".gitattributes",
+        ".gitignore",
         "LICENSE",
         "LICENSE-DATA",
     ]
