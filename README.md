@@ -2,7 +2,7 @@
 
 # Does Quantization Change Small Language Models' Responses to Misleading Context?
 
-**Reproducibility artifact for the NeurIPS 2026 LIGHT Workshop paper: "Does Quantization Change Small Language Models' Responses to Misleading Context?"**
+**A reproducibility artifact studying how post-training quantization interacts with cue-conditioned reasoning in small language models.**
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![NumPy](https://img.shields.io/badge/NumPy-2.4.1-013243?style=flat-square&logo=numpy&logoColor=white)](https://numpy.org/)
@@ -10,7 +10,7 @@
 
 </div>
 
-This repository is the reproducibility artifact for the NeurIPS 2026 LIGHT Workshop paper on quantization and responses to misleading context in small language models. It contains the frozen 145-question trial set, 15 completed generation files, 3,078 automated judgments, two 360-row human annotation files, and the analysis code used for the reported tables and figures.
+This repository is a reproducibility artifact for a study of how post-training quantization changes how small language models respond to misleading contextual cues. It contains a frozen 145-question trial set, 15 completed generation files, 3,078 automated judgments, two 360-row human annotation files, and the full analysis code used for the reported tables and figures.
 
 ---
 
@@ -24,7 +24,6 @@ This repository is the reproducibility artifact for the NeurIPS 2026 LIGHT Works
 - [Automated Judging](#automated-judging)
 - [Data Integrity & Audits](#data-integrity--audits)
 - [Contributing](#contributing)
-- [Citation](#citation)
 - [License](#license)
 
 ---
@@ -33,13 +32,15 @@ This repository is the reproducibility artifact for the NeurIPS 2026 LIGHT Works
 
 We study how **quantization** interacts with **cue-conditioned reasoning** in small language models (SLMs). The artifact includes:
 
-- A frozen **145-question trial set** across multiple reasoning benchmarks.
-- **15 generation files** covering 5 model configurations (Llama-3.2-1B, Llama-3.2-3B, Qwen2.5-1.5B, Qwen2.5-7B, Gemma-2-2b) × 3 precisions (q4bit, q8bit, qbf16).
-- **3,078 automated rubric-based judgments** (DeepSeek OpenAI-compatible endpoint).
-- **Two 360-row human annotation files** for agreement validation.
-- A complete **re-analysis pipeline** that regenerates every table, figure, and audit in the paper.
+- A frozen **145-question trial set** drawn from BIG-Bench Hard and MMLU.
+- **15 generation files** covering 5 model checkpoints (Llama-3.2-1B, Llama-3.2-3B, Qwen2.5-1.5B, Qwen2.5-7B, Gemma-2-2b) × 3 precisions (BF16, 8-bit LLM.int8, 4-bit NF4).
+- **3,078 automated rubric-based judgments** scored through a DeepSeek OpenAI-compatible endpoint.
+- **Two 360-row human annotation files** used to validate the automated labels.
+- A complete **re-analysis pipeline** that regenerates every table, figure, and audit from the frozen inputs.
 
-> **Note:** The paper treats the evaluator output as a specified rubric-based behavioral measure, not as direct access to latent chain-of-thought computation.
+Cued responses are generated only when the uncued answer parses as correct, so all reported rates are conditional on passing that gate. Comparisons across precisions therefore use the intersection of questions answered correctly under every configuration rather than pooling unmatched rows.
+
+> **Note:** This artifact treats the evaluator output as a specified rubric-based behavioral measure, not as direct access to latent chain-of-thought computation.
 
 ## Repository Structure
 
@@ -69,7 +70,7 @@ We study how **quantization** interacts with **cue-conditioned reasoning** in sm
 
 ## Getting Started
 
-Download this artifact (or clone the accompanying anonymous repository) and create a virtual environment:
+Clone the repository and create a virtual environment:
 
 ```bash
 python -m venv .venv
@@ -102,11 +103,11 @@ modal run run_experiments.py --batch t4 --allow-restart
 modal run run_experiments.py --batch l4 --allow-restart
 ```
 
-> **Note:** The frozen JSON outputs in `data/raw/` — not a fresh run — are authoritative for the paper. Eight older configurations omit some provenance fields, the Qwen runs span two Transformers versions, and requested software dtypes do not by themselves establish native GPU arithmetic. New runs record additional device, counter, and parser-version metadata.
+> **Note:** The frozen JSON outputs in `data/raw/` — not a fresh run — are authoritative for the reported analysis. Eight older configurations omit some provenance fields, the Qwen runs span two Transformers versions, and requested software dtypes do not by themselves establish native GPU arithmetic. New runs record additional device, counter, and parser-version metadata.
 
 ## Automated Judging
 
-The judge uses the official DeepSeek OpenAI-compatible endpoint. Preview the inputs before making paid API calls:
+The judge uses an OpenAI-compatible DeepSeek endpoint. Preview the inputs before making paid API calls:
 
 ```bash
 export DEEPSEEK_API_KEY=...
@@ -137,18 +138,6 @@ Key audit outputs produced by the pipeline:
 
 Bug reports, issue triage, and reproducibility notes are welcome. Please open an issue before proposing changes to the frozen data, the analysis pipeline, or the integrity manifest.
 
-## Citation
-
-If you use this artifact in your research, please cite the accompanying manuscript:
-
-```bibtex
-@inproceedings{quantization-misleading-context,
-  title     = {Does Quantization Change Small Language Models' Responses to Misleading Context?},
-  booktitle = {NeurIPS 2026 Workshop on Lightweight AI (LIGHT)},
-  year      = {2026}
-}
-```
-
 ## License
 
-The analysis code and scripts are released under the MIT License (see `LICENSE`). The research data are released under the Creative Commons Attribution 4.0 International License (see `LICENSE-DATA`), intended for research use consistent with the manuscript's peer-review and reproducibility goals.
+The analysis code and scripts are released under the MIT License (see `LICENSE`). The research data are released under the Creative Commons Attribution 4.0 International License (see `LICENSE-DATA`), intended for research use consistent with the study's reproducibility goals.
