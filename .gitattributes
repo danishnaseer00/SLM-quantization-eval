@@ -1,0 +1,5 @@
+# Reproducibility artifact: file bytes are hash-verified by
+# ARTIFACT_MANIFEST.sha256, so git must not rewrite line endings.
+# Without this, core.autocrlf on Windows rewrites LF -> CRLF on checkout and
+# every `sha256sum --check` fails for a reviewer who clones the repository.
+* -text
